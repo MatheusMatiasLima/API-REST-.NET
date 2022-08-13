@@ -1,0 +1,29 @@
+Programas:
+Visual Studio 2022 ou 2019 community (IDE) https://visualstudio.microsoft.com/pt-br/downloads/
+	Instalar o pacote "ASP.NET e desenvolvimento Web" quando estiver instalando
+
+
+Postgree: https://www.postgresql.org/
+	Caso não tenha instalado, na instalação coloque a senha como "1234"
+	Caso já tenha instalado, modifique o password no arquivo appsettings do projeto
+
+Como rodar:
+	Configurando o banco:
+		1) Defina na connection do server defina host como "localhost", port como "5432" e username como "postgres"
+		2) Crie um banco de dados chamado "Agenda"
+	
+	Instalando o entity framework para realização do code firt. Caso não queria fazer essa etapa crie a tabela "tarefa" na mão
+		Execute as linhas de comando na pasta do projeto:
+			dotnet tool install --global dotnet-ef
+			dotnet ef database update
+		
+		***Após rodar esse comando a tabela "tarefa" foi criada no banco de dados Agenda***
+		
+		Tente rodar a solução, se der erro de compilação selecione a guia Ferramentas>Gerenciador de pacotes NuGet>Gerenciar pacotes NuGet para solução
+		Caso não tenha nenhum pacote instalado, instale esses:
+			- Entity framework core 5.0.0
+			- Entity framework core tools 5.0.0
+			- Npgsql entiy framework core postgre SQL 5.0.0
+		Selecione para executar o projeto Agenda em qualquer CPU
+		
+		Após isso deve ser possivel vizualizar o swagger
